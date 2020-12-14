@@ -30,9 +30,9 @@ public   class MainNewsActivity extends AppCompatActivity implements AdapterView
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mainnews);
         lvNews = (ListView)findViewById(R.id.lvNews);
         dataList = new ArrayList<Data>();
         adapter = new NewsAdapter(this, dataList);
@@ -41,7 +41,7 @@ public   class MainNewsActivity extends AppCompatActivity implements AdapterView
         sendRequestWithOKHttp();
     }
 
-    private void sendRequestWithOKHttp(){
+    private   void sendRequestWithOKHttp(){
         new Thread(new Runnable() {
             @Override
             public void run() {

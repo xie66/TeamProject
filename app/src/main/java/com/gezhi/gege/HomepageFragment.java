@@ -16,10 +16,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.gezhi.gege.news.MainNewsActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomepageFragment extends Fragment {
+public class HomepageFragment extends Fragment implements View.OnClickListener {
 
     List<Smalltools> smalltoolsList = new ArrayList<>();
 
@@ -27,7 +29,7 @@ public class HomepageFragment extends Fragment {
     LinearLayoutManager layoutManager;
     DrawerLayout drawerLayout;
     ToolAdapter toolAdapter;
-    ImageView newsimage;
+    ImageView toolimage;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class HomepageFragment extends Fragment {
 //        startActivity(intent);
 //    }
 //});
+
+
         initTools();
     }
 
@@ -50,7 +54,8 @@ public class HomepageFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.homepagefragment_layout, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        newsimage = (ImageView) view.findViewById(R.id.tool_image);
+        toolimage = (ImageView) view.findViewById(R.id.home_image);
+        toolimage.setOnClickListener(this);
 //        newsimage.setOnClickListener(this);
 //        ToolAdapter toolAdapter = new ToolAdapter(smalltoolsList);
 //        layoutManager = new LinearLayoutManager(this.getActivity());
@@ -67,14 +72,10 @@ public class HomepageFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         toolAdapter = new ToolAdapter(smalltoolsList);
         recyclerView.setAdapter(toolAdapter);
-
     }
 
     private void initTools() {
-//        Text text = new Text("快乐屋");
-//        Smalltools apple = new Smalltools("陕西红富士", R.drawable.home_cc
-//        );
-//        smalltoolsList.add(apple);
+
 
         Smalltools smalltools1 = new Smalltools("新闻", R.drawable.apple);
         Smalltools smalltools2 = new Smalltools("阅读", R.drawable.home_cc);
@@ -93,5 +94,15 @@ public class HomepageFragment extends Fragment {
     }
 
 
-
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.home_image:
+                Intent intent = new Intent(getActivity(), MainNewsActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+    }
 }

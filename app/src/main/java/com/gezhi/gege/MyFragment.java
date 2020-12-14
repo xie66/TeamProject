@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.gezhi.gege.news.MainNewsActivity;
+
 public class MyFragment extends Fragment implements View.OnClickListener {
 
     Button loginBtn;
@@ -35,7 +37,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.login_btn:
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
+                getActivity().startActivity(intent);
                 break;
             default:
                 break;

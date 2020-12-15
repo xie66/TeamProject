@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     RadioButton radioButtonone, radioButtontwo, radioButtonthree, radioButtonfour;
     RadioGroup radiogroup;
 
-
 //    RecyclerView recyclerView;
 //    LinearLayoutManager layoutManager;
 //    DrawerLayout drawerLayout;

@@ -1,5 +1,6 @@
 package com.gezhi.gege.news;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
 import com.gezhi.gege.HomepageFragment;
@@ -31,7 +33,10 @@ public class MainNewsActivity extends AppCompatActivity implements AdapterView.O
     private NewsAdapter adapter;
     private List<Data> dataList;
     ImageView backIv;
+    SwipeRefreshLayout swipeRefreshLayout;
 
+
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +55,34 @@ public class MainNewsActivity extends AppCompatActivity implements AdapterView.O
                 startActivity(intent);
             }
         });
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swip_refresh);
+        swipeRefreshLayout.setColorSchemeColors(R.color.purple_200);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshnews();
+            }
+        });
+    }
+
+    public void refreshnews() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.notifyDataSetChanged();
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+            }
+        }).start();
     }
 
     private void sendRequestWithOKHttp() {

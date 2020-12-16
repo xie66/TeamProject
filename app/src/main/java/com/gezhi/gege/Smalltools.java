@@ -5,13 +5,14 @@ import java.util.List;
 public class Smalltools {
     String name;
     int imageId;
+    int tag;
 
 
-    public Smalltools(String name, int imageId) {
+    public Smalltools(String name, int imageId, int tag) {
         this.name = name;
         this.imageId = imageId;
+        this.tag = tag;
     }
-
 
 
     public String getName() {
@@ -28,5 +29,13 @@ public class Smalltools {
 
     public void setImageId(int imageId) {
         this.imageId = imageId;
+    }
+
+    public int getTag() {
+        return tag;
+    }
+
+    public void setTag(int tag) {
+        this.tag = tag;
     }
 }

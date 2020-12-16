@@ -37,6 +37,6 @@
     <ListView
         android:id="@+id/lvNews"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

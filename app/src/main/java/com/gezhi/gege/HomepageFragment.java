@@ -75,22 +75,23 @@ public class HomepageFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initTools() {
-
-
-        Smalltools smalltools1 = new Smalltools("新闻", R.drawable.apple);
-        Smalltools smalltools2 = new Smalltools("阅读", R.drawable.home_cc);
-        Smalltools smalltools3 = new Smalltools("新闻", R.drawable.apple);
-        Smalltools smalltools4 = new Smalltools("阅读", R.drawable.home_cc);
+        Smalltools smalltools1 = new Smalltools("新闻", R.drawable.news_icon,1);
+        Smalltools smalltools2 = new Smalltools("阅读", R.drawable.readlogo,2);
+        Smalltools smalltools3 = new Smalltools("计算器", R.drawable.calc_icon,3);
+        Smalltools smalltools4 = new Smalltools("闹钟", R.drawable.clock_icon,4);
+        Smalltools smalltools5 = new Smalltools("计步器", R.drawable.jbq,5);
+        Smalltools smalltools6 = new Smalltools("表白墙", R.drawable.bp_icon,6);
         // Smalltools smalltools = {smalltools1, smalltools2, smalltools3, smalltools4};
 //        smalltoolsList.clear();
 
 //        Random random = new Random();
 //        int index = random.nextInt(smalltools.length);
-
         smalltoolsList.add(smalltools1);
         smalltoolsList.add(smalltools2);
         smalltoolsList.add(smalltools3);
         smalltoolsList.add(smalltools4);
+        smalltoolsList.add(smalltools5);
+        smalltoolsList.add(smalltools6);
     }
 
 

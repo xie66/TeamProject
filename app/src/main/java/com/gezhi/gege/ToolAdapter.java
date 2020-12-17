@@ -32,7 +32,6 @@ public class ToolAdapter extends RecyclerView.Adapter<ToolAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-//            cardView = (CardView) itemView;
             toolimage = (ImageView) itemView.findViewById(R.id.tool_image);
             toolname = (TextView) itemView.findViewById(R.id.tool_name);
         }
@@ -40,22 +39,15 @@ public class ToolAdapter extends RecyclerView.Adapter<ToolAdapter.ViewHolder> {
 
     ToolAdapter(List<Smalltools> smalltoolsList) {
         msmalltools = smalltoolsList;
-//        mtext = text;
 
     }
 
-    //     ToolAdapter1(List<Text> text) {
-////        msmalltools = smalltoolsList;
-//        mtext = text;
-//
-//    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContent = parent.getContext();
         View view = LayoutInflater.from(mContent).inflate(R.layout.toolitem_layout, parent, false);
         ViewHolder holder = new ViewHolder(view);
-//        if(holder.toolimage.get)
         holder.toolimage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,20 +70,16 @@ public class ToolAdapter extends RecyclerView.Adapter<ToolAdapter.ViewHolder> {
         return holder;
     }
 
-//    int position1;
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-//        position1 = position;
+
         Smalltools smalltools = msmalltools.get(position);
         holder.toolimage.setImageResource(smalltools.getImageId());
         holder.toolname.setText(smalltools.getName());
         Glide.with(mContent).load(smalltools.getImageId()).into(holder.toolimage);
     }
 
-    //    int getposition() {
-//        return position1;
-//    }
     @Override
     public int getItemCount() {
         return msmalltools.size();

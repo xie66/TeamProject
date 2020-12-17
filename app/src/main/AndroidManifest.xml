@@ -12,6 +12,7 @@
         android:roundIcon="@drawable/icon_gege"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gege">
+        <activity android:name=".RegistActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".news.BrowseNewsActivity" />
         <activity android:name=".news.MainNewsActivity" />

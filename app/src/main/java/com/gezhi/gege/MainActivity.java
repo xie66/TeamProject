@@ -19,7 +19,6 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-
     List<Smalltools> smalltoolsList = new ArrayList<>();
     //1定义java对象
     ViewPager viewPager;
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initOnclick() {
-
         radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {

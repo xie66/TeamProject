@@ -16,6 +16,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.gezhi.gege.map.MainMapActivity;
 import com.gezhi.gege.news.MainNewsActivity;
 
 import java.util.List;
@@ -56,12 +57,15 @@ public class ToolAdapter extends RecyclerView.Adapter<ToolAdapter.ViewHolder> {
                     mContent.startActivity(intent);
                     Log.d("news-TAG", "onClick: 新闻");
 //                    Toast.makeText(mContent, "新闻", Toast.LENGTH_SHORT).show();
-                } else if (holder.toolname.getText().equals("阅读")) {
-                    Toast.makeText(mContent, "阅读", Toast.LENGTH_SHORT).show();
-                } else if (holder.toolname.getText().equals("计算器")) {
-                    Toast.makeText(mContent, "计算器", Toast.LENGTH_SHORT).show();
+                } else if (holder.toolname.getText().equals("地图")) {
+                    Intent intent = new Intent(mContent, MainMapActivity.class);
+                    mContent.startActivity(intent);
+                    Log.d("map-TAG", "onClick: 地图");
+//                    Toast.makeText(mContent, "地图", Toast.LENGTH_SHORT).show();
                 } else if (holder.toolname.getText().equals("计步器")) {
                     Toast.makeText(mContent, "计步器", Toast.LENGTH_SHORT).show();
+                } else if (holder.toolname.getText().equals("计算器")) {
+                    Toast.makeText(mContent, "计算器", Toast.LENGTH_SHORT).show();
                 } else if (holder.toolname.getText().equals("表白墙")) {
                     Toast.makeText(mContent, "表白墙", Toast.LENGTH_SHORT).show();
                 }

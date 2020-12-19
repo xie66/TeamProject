@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".map.MainMapActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="小车地图信息"
+            android:textColor="#E63F0A"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/map_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/arrow_left" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/b_1_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/biankuang">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/map_location" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/b_1_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/biankuang">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/map_layer" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/b_1_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/biankuang">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/map_marker" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/b_1_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/biankuang">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/map_line" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/blayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_margin="100dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/b_t_1"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#878C90"
+            android:text="导航视图" />
+
+        <TextView
+            android:id="@+id/b_t_2"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#878C90"
+            android:text="夜景视图" />
+
+        <TextView
+            android:id="@+id/b_t_3"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#878C90"
+            android:text="标准视图" />
+
+        <TextView
+            android:id="@+id/b_t_4"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#878C90"
+            android:text="卫星视图" />
+
+        <TextView
+            android:id="@+id/b_t_5"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#878C90"
+            android:text="交通视图" />
+    </LinearLayout>
+</FrameLayout>

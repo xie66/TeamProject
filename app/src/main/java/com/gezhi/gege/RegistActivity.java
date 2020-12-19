@@ -1,6 +1,7 @@
 package com.gezhi.gege;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegistActivity extends AppCompatActivity implements View.OnClickListener {
@@ -53,13 +55,12 @@ public class RegistActivity extends AppCompatActivity implements View.OnClickLis
 //    }
 
 
-//    @Override
+    //    @Override
 //    public void onSaveInstanceState(@NonNull Bundle outState) {
 //        String straccount = registeraccountet.getText().toString().trim();
 //        String strpassword = registerpasswordet.getText().toString().trim();
 //        super.onSaveInstanceState(outState);
 //    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -73,14 +74,30 @@ public class RegistActivity extends AppCompatActivity implements View.OnClickLis
                 Log.d("TAG", "onClick:密码为： " + strpassword);
                 editor.apply();
 
-                Intent data1 = new Intent();
-                data1.putExtra("straccount", straccount);
-                data1.putExtra("strpassword", strpassword);
-                Log.d("putExtraDataTAG", "onClick: " + straccount + "," + strpassword);
-                setResult(RESULT_OK, data1);
-                finish();
-                Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
-                startActivity(intent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("温馨提示");
+                builder.setMessage("是否返回登录？");
+                builder.setCancelable(true);
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent data1 = new Intent();
+                        data1.putExtra("straccount", straccount);
+                        data1.putExtra("strpassword", strpassword);
+                        Log.d("putExtraDataTAG", "onClick: " + straccount + "," + strpassword);
+                        setResult(RESULT_OK, data1);
+                        finish();
+                        Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.show();
                 break;
 //            case R.id.backlogin_btn:
 //                break;

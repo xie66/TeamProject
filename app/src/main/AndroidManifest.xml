@@ -22,6 +22,7 @@
         android:roundIcon="@drawable/icon_gege"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gege">
+        <activity android:name=".stepcount.StepcounterActivity" />
         <activity android:name=".map.MainMapActivity" />
         <activity android:name=".MyActivity1" />
         <activity android:name=".RegistActivity" />

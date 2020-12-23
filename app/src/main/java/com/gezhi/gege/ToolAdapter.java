@@ -18,13 +18,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.gezhi.gege.map.MainMapActivity;
 import com.gezhi.gege.news.MainNewsActivity;
+import com.gezhi.gege.stepcount.StepcounterActivity;
 
 import java.util.List;
 
 public class ToolAdapter extends RecyclerView.Adapter<ToolAdapter.ViewHolder> {
     Context mContent;
     List<Smalltools> msmalltools;
-//    List<Text> mtext;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
@@ -40,7 +40,6 @@ public class ToolAdapter extends RecyclerView.Adapter<ToolAdapter.ViewHolder> {
 
     ToolAdapter(List<Smalltools> smalltoolsList) {
         msmalltools = smalltoolsList;
-
     }
 
     @NonNull
@@ -63,7 +62,10 @@ public class ToolAdapter extends RecyclerView.Adapter<ToolAdapter.ViewHolder> {
                     Log.d("map-TAG", "onClick: 地图");
 //                    Toast.makeText(mContent, "地图", Toast.LENGTH_SHORT).show();
                 } else if (holder.toolname.getText().equals("计步器")) {
-                    Toast.makeText(mContent, "计步器", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContent, StepcounterActivity.class);
+                    mContent.startActivity(intent);
+                    Log.d("map-TAG", "onClick: 计步器");
+//                    Toast.makeText(mContent, "计步器", Toast.LENGTH_SHORT).show();
                 } else if (holder.toolname.getText().equals("计算器")) {
                     Toast.makeText(mContent, "计算器", Toast.LENGTH_SHORT).show();
                 } else if (holder.toolname.getText().equals("表白墙")) {

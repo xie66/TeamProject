@@ -83,7 +83,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener {
     private void initTools() {
         Smalltools smalltools1 = new Smalltools("新闻", R.drawable.news_icon, 1);
         Smalltools smalltools2 = new Smalltools("地图", R.drawable.ditu, 6);
-        Smalltools smalltools3 = new Smalltools("计步器", R.drawable.jbq, 5);
+        Smalltools smalltools3 = new Smalltools("计步器", R.drawable.step_balck, 5);
         Smalltools smalltools4 = new Smalltools("闹钟", R.drawable.clock_icon, 4);
         Smalltools smalltools5 = new Smalltools("计算器", R.drawable.calc_icon, 3);
         Smalltools smalltools6 = new Smalltools("表白墙", R.drawable.bp_icon, 6);

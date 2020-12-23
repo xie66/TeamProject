@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/tool_image"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal" />
 
         <TextView

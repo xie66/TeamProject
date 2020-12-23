@@ -31,6 +31,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             passwordEt1 = preferences.getString("password", "");
             accountEt.setText(accountEt1);
             passwordEt.setText(passwordEt1);
+            Log.d("TAG", "onClick:用户为： " + accountEt);
+            Log.d("TAG", "onClick:密码为： " + passwordEt);
         }
     }
 
@@ -42,7 +44,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginBtn.setOnClickListener(this);
         registerBtn.setOnClickListener(this);
     }
-
 
     @Override
     public void onClick(View view) {
@@ -57,11 +58,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
             case R.id.register_btn:
-//                SharedPreferences preferences = getSharedPreferences("data", MODE_PRIVATE);
-//                String accountEt1 = preferences.getString("name", "");
-//                String passwordEt1 = preferences.getString("name", "");
-//                accountEt.setText(accountEt1);
-//                passwordEt.setText(passwordEt1);
                 Intent intent = new Intent(LoginActivity.this, RegistActivity.class);
                 startActivityForResult(intent, REQUEST_CODE_GO_TO_REGIST);
                 Log.d("TAG", "onClick: 单击了注册按钮！");
